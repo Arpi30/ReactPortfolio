@@ -43,10 +43,16 @@ export const Footer = () => {
             </UlIcon>
           </div>
           <div>
-            <Ul>
+            <Ul className="unOrderedList">
               <div>Contact</div>
               <li>Write me</li>
-              <li>Download CV</li>
+              <li>
+                <a
+                  style={{ textDecoration: "none", color: "white" }}
+                  href="https://www.aaresume.hu">
+                  View CV
+                </a>
+              </li>
             </Ul>
           </div>
         </Row>

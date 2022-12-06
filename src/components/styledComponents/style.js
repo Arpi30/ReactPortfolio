@@ -8,7 +8,15 @@ export const NavBar = styled.nav`
   align-items: center;
   box-shadow: 0 0 15px white;
 `;
+export const HomeContainer = styled.div`
+  position: absolute;
+  left: 5rem;
+  top: 20%;
 
+  @media (max-width: 425px) {
+    left: 1rem;
+  }
+`;
 export const Name = styled.span`
   font-weight: 700;
   font-size: 2rem;
@@ -31,6 +39,57 @@ export const Name = styled.span`
     color: black;
     bottom: 0;
     right: 2px;
+  }
+`;
+export const LandingPageLastName = styled.span`
+  color: white;
+`;
+export const LandingPageName = styled.span`
+  font-weight: 700;
+  font-size: 10rem;
+  margin: 15px;
+  color: black;
+  position: relative;
+
+  &:before {
+    content: "WEB";
+    position: absolute;
+    font-size: 2rem;
+    color: black;
+    bottom: 0;
+    left: 400px;
+  }
+  &:after {
+    content: "DEVELOPER";
+    position: absolute;
+    font-size: 2rem;
+    color: white;
+    bottom: 0;
+    right: 2px;
+  }
+
+  @media (max-width: 1100px) {
+    font-size: 5rem;
+
+    &:before {
+      font-size: 1rem;
+      left: 200px;
+    }
+    &:after {
+      font-size: 1rem;
+    }
+  }
+  @media (max-width: 700px) {
+    font-size: 3rem;
+    margin: 0;
+
+    &:before {
+      font-size: 10px;
+      left: 120px;
+    }
+    &:after {
+      font-size: 10px;
+    }
   }
 `;
 export const NameFooter = styled.span`
@@ -174,19 +233,48 @@ export const MainContent = styled.div`
 export const ButtonContainer = styled.div`
   display: flex;
   flex-direction: column;
+  max-width: 300px;
+
+  @media (max-width: 500px) {
+    width: 200px;
+  }
 `;
-export const HomeButton = styled.button`
+export const HomeButton = styled.a`
   padding: 7px;
+  color: black;
   margin: 5px;
-  font-size: 1rem;
+  font-size: 2rem;
   font-weight: 300;
   text-align: start;
   background: transparent;
   border: none;
   letter-spacing: 0.2em;
-  border-bottom: 1px solid black;
-  border-right: 1px solid black;
   outline: none;
+  text-decoration: none;
+  cursor: pointer;
+  position: relative;
+
+  &:before {
+    position: absolute;
+    content: "";
+    height: 2px;
+    width: 0;
+    bottom: 0;
+    background: white;
+    transition: all 0.3s ease-in-out;
+  }
+  &:hover:before {
+    width: 100%;
+  }
+
+  &:hover {
+    color: white;
+    transition: color 0.3s ease-in-out;
+  }
+
+  @media (max-width: 700px) {
+    font-size: 1rem;
+  }
 `;
 export const StyledForm = styled.form`
   position: absolute;
@@ -219,7 +307,7 @@ export const Inputs = styled.input`
   border-radius: 2px;
 
   &:focus {
-    border: ${(props) => (props.email ? "3px solid green" : "2px solid red")};
+    background: ${(props) => (props.reg ? "#adffaf" : "#ffb2b2")};
   }
 `;
 export const FormSubmit = styled.button`
@@ -229,4 +317,11 @@ export const FormSubmit = styled.button`
   font-weight: 700;
   background: white;
   border: none;
+`;
+export const Stars = styled.div`
+  cursor: pointer;
+  .star:hover {
+    transform: scale(1.4);
+    transition: transform 0.2s ease-in-out;
+  }
 `;

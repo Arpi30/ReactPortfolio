@@ -11,7 +11,7 @@ import { Footer } from "./components/footer";
 function App() {
   return (
     <div className="App">
-      <div style={{ flex: "1" }}>
+      <div style={{ flex: "1", position: "relative" }}>
         <BrowserRouter>
           <Nav />
           <Routes>

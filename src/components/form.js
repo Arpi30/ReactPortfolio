@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import {
   StyledForm,
@@ -10,7 +10,14 @@ import { AiFillCloseSquare } from "react-icons/ai";
 
 export const Form = (props) => {
   const [emailValue, setEmailValue] = useState("");
+  const [name, setName] = useState("");
+  const [message, setMessage] = useState("");
   const email = /^([a-z\d.-]+)@([a-z\d-]+)\.([a-z]{2,8})(\.[a-z]{2,8})?$/;
+  const userName = /^[\w\d\s.áéíóőúű]{5,20}$/i;
+  const textMessage = /^[\w\d\s.áéíóőúű]{5,200}$/i;
+  function changeValue(e, setVal) {
+    setVal(e.target.value);
+  }
 
   return (
     <StyledForm>
@@ -33,15 +40,23 @@ export const Form = (props) => {
           </p>
         </div>
         <InputFields className="InputsFields">
-          <Inputs type="text" placeholder="Name"></Inputs>
+          <Inputs
+            onChange={(e) => changeValue(e, setName)}
+            reg={userName.test(name)}
+            type="text"
+            placeholder="Name"></Inputs>
           <Inputs
             type="email"
             placeholder="Email"
             value={emailValue}
-            onChange={(e) => setEmailValue(e.target.value)}
+            onChange={(e) => changeValue(e, setEmailValue)}
             className={email.test(emailValue) ? "valid" : "invalid"}
-            email={email.test(emailValue)}></Inputs>
-          <Inputs type="text" placeholder="Message"></Inputs>
+            reg={email.test(emailValue)}></Inputs>
+          <Inputs
+            onChange={(e) => changeValue(e, setMessage)}
+            reg={textMessage.test(message)}
+            type="text"
+            placeholder="Message"></Inputs>
         </InputFields>
         <FormSubmit>Submit</FormSubmit>
       </div>

@@ -9,6 +9,7 @@
   min-width: 100%;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 .icons{
   cursor: pointer;
@@ -52,28 +53,107 @@
     width: 60px;
   }
 }
-.form-enter {
-  opacity: 0;
+.unOrderedList li{
+  margin: 5px 0;
 }
-
-.form-enter-active {
-  opacity: 1;
-  transition: opacity 5000ms ease-in-out;
+.projectImg{
+  width: 100%;
 }
-
-.form-enter-done {
-  opacity: 1;
+.projectImg img{
+  width: 100%;
+  min-height: 100%;
+  max-height: 100%;
+  object-fit: cover;
 }
-
-.form-exit {
-  opacity: 1;
+.projectBody{
+  margin: 10px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
 }
+.projectPost{
+  width: 70vw;
 
-.form-exit-active {
-  opacity: 0;
-  transition: opacity 5000ms ease-out;
+  max-height: 100%;
+  background-color: white;
+  display: flex;
+  padding: .5rem;
+  margin: 15px 0;
 }
-
-.form-exit-done {
-  opacity: 0;
+.detailsContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.projectInfo{
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-between;
+  margin: 15px;
+  max-width: 75vw;
+}
+.projectText{
+  text-align: start;
+  color: rgba(0, 0, 0, .2);
+}
+.projectInfoContainer{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.watch{
+  display: flex;
+  align-items: center;
+}
+.watchNumber{
+  font-size: .7rem;
+}
+.projectButton{
+  border-top: 1px solid black;
+  width: 100%;
+  text-align: end;
+}
+.projectClassification{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+@media (max-width: 500px){
+  .projectPost{
+    width: 98vw;
+    flex-direction: column;
+  }
+}
+@media (max-width: 600px){
+  .projectPost{
+    width: 98vw;
+    flex-direction: column;
+    min-height: 60vh;
+  }
+    .projectImg img{
+      height: 15rem;
+    }
+}
+@media (max-width: 800px) {
+  .projectPost {
+    width: 80vw;
+    flex-direction: column;
+  }
+    .projectImg img {
+      height: 15rem;
+    }
+}
+@media (max-width: 1000px) {
+    .projectImg img {
+      height: 15rem;
+    }
+}
+@media (max-width: 1070px) {
+    .projectBody {
+      flex-direction: column;
+    }
 }
