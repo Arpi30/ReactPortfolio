@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 export const NavBar = styled.nav`
   background: white;
@@ -7,6 +7,9 @@ export const NavBar = styled.nav`
   justify-content: space-between;
   align-items: center;
   box-shadow: 0 0 15px white;
+  position: fixed;
+  z-index: 1;
+  width: 100%;
 `;
 export const HomeContainer = styled.div`
   position: absolute;
@@ -170,7 +173,7 @@ export const NavItems = styled.div`
     flex-direction: column;
     left: 0;
     width: 100%;
-    height: 100%;
+    min-height: 100vh;
     background: white;
     top: 45px;
     margin: 0;
@@ -323,5 +326,39 @@ export const Stars = styled.div`
   .star:hover {
     transform: scale(1.4);
     transition: transform 0.2s ease-in-out;
+  }
+`;
+export const VoteButton = styled.button`
+  margin-bottom: 10px;
+  padding: 5px;
+  fontsize: 0.8rem;
+  background: white;
+  cursor: pointer;
+`;
+export const SpinnerContainer = styled.div`
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  alignitems: center;
+  justifycontent: center;
+`;
+const spinnerAnimate = keyframes`
+  from{
+    transform: rotateY(180deg);
+  }
+`;
+export const SpinnerIcon = styled.span`
+  font-size: 8rem;
+  position: relative;
+
+  &:after {
+    position: absolute;
+    color: white;
+    content: "A";
+    height: 2px;
+    width: 0;
+    top: 0;
+    animation: ${(props) => (props.pending ? spinnerAnimate : "")} 1.5s
+      ease-in-out;
   }
 `;
