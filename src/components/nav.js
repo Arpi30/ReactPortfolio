@@ -4,20 +4,27 @@ import { NavBar, Name, Toggle, Bar, NavItems } from "./styledComponents/style";
 
 export const Nav = () => {
   const [open, setOpen] = useState(false);
+
+  function closeToggleBar() {
+    setOpen(false);
+  }
+
   return (
     <NavBar>
-      <Name>Acs Arpad</Name>
+      <Link style={{ textDecoration: "none" }} to="/">
+        <Name>Acs Arpad</Name>
+      </Link>
       <NavItems open={open}>
-        <Link className="Link" to="/">
+        <Link onClick={closeToggleBar} className="Link" to="/">
           Home
         </Link>
-        <Link className="Link" to="project">
+        <Link onClick={closeToggleBar} className="Link" to="project">
           Project
         </Link>
-        <Link className="Link" to="about">
+        <Link onClick={closeToggleBar} className="Link" to="about">
           About
         </Link>
-        <Link className="Link" to="contact">
+        <Link onClick={closeToggleBar} className="Link" to="contact">
           Contact
         </Link>
       </NavItems>

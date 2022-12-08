@@ -1,3 +1,4 @@
+import { FaEdge } from "react-icons/fa";
 import styled, { keyframes } from "styled-components";
 
 export const NavBar = styled.nav`
@@ -7,7 +8,7 @@ export const NavBar = styled.nav`
   justify-content: space-between;
   align-items: center;
   box-shadow: 0 0 15px white;
-  position: fixed;
+
   z-index: 1;
   width: 100%;
 `;
@@ -360,5 +361,90 @@ export const SpinnerIcon = styled.span`
     top: 0;
     animation: ${(props) => (props.pending ? spinnerAnimate : "")} 1.5s
       ease-in-out;
+  }
+`;
+export const AboutContainer = styled.div`
+  max-width: 60%;
+  margin: 0 auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+
+  @media (max-width: 1400px) {
+    max-width: 100%;
+  }
+`;
+export const TaskField = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1400px;
+
+  @media (max-width: 800px) {
+    justify-content: center;
+  }
+`;
+export const TaskFieldContent = styled.div`
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`;
+export const IntroText = styled.div`
+  text-align: justify;
+  padding: 10px;
+  font-style: italic;
+  margin-bottom: 50px;
+`;
+export const HTML = styled.div`
+  min-width: 350px;
+  max-width: 350px;
+  min-height: 250px;
+  background: white;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 5px;
+
+  @media (max-width: 720px) {
+    min-width: 98vw;
+  }
+`;
+export const TaskCardTitle = styled.span`
+  max-width: 120px;
+  padding: 10px;
+
+  border-radius: 15px;
+  color: rgba(0, 0, 0, 0.4);
+`;
+const taskbaranimation = (props) => keyframes`
+  0%{
+    width: 0%;
+  }
+  100%{
+    width: ${props.taskbarprozent};
+  }
+`;
+export const TaskBar = styled.span`
+  position: relative;
+  min-height: 15px;
+
+  &:after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    background: #31475f;
+    left: 0;
+  }
+  &:before {
+    border-radius: 5px;
+    position: absolute;
+    content: "";
+    height: 100%;
+    left: 0;
+    background: #ffb4b4;
+    z-index: 1;
+    animation: ${taskbaranimation} 1s forwards;
   }
 `;
