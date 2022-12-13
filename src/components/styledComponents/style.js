@@ -345,23 +345,12 @@ export const SpinnerContainer = styled.div`
 `;
 const spinnerAnimate = keyframes`
   from{
-    transform: rotateY(180deg);
+    transform: rotate(360deg);
   }
 `;
 export const SpinnerIcon = styled.span`
   font-size: 8rem;
-  position: relative;
-
-  &:after {
-    position: absolute;
-    color: white;
-    content: "A";
-    height: 2px;
-    width: 0;
-    top: 0;
-    animation: ${(props) => (props.pending ? spinnerAnimate : "")} 1.5s
-      ease-in-out;
-  }
+  animation: ${(props) => (props.pending ? spinnerAnimate : "")} 0.5s infinite;
 `;
 export const AboutContainer = styled.div`
   max-width: 60%;
@@ -396,7 +385,7 @@ export const IntroText = styled.div`
   font-style: italic;
   margin-bottom: 50px;
 `;
-export const HTML = styled.div`
+export const Card = styled.div`
   min-width: 350px;
   max-width: 350px;
   min-height: 250px;
@@ -447,4 +436,50 @@ export const TaskBar = styled.span`
     z-index: 1;
     animation: ${taskbaranimation} 1s forwards;
   }
+`;
+export const HeaderOption = styled.div`
+  height: 100%;
+  width: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  position: relative;
+  align-items: center;
+`;
+export const HeaderOptionSpan = styled.span`
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  &:before {
+    position: absolute;
+    content: "";
+    height: 4px;
+    width: 4px;
+    background: #9b9b9b;
+    border-radius: 50%;
+  }
+`;
+export const HeaderOptionContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2px;
+  position: absolute;
+  left: 0;
+  border-radius: 5px;
+  padding: 3px;
+  background: #f4f4f4;
+`;
+export const HeaderOptionSpanCOntainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  position: absolute;
+  right: 0;
+  height: 100%;
+  width: 5px;
+  cursor: pointer;
 `;

@@ -1,17 +1,32 @@
 import React, { useContext, useEffect, useState } from "react";
 import { LoadContext } from "./useContext";
 import { Spinner } from "./spinner";
+import { MdLiveHelp } from "react-icons/md";
+import { FaCommentDots } from "react-icons/fa";
+import { BsFillBookmarkStarFill } from "react-icons/bs";
 import {
-  HTML,
+  Card,
   IntroText,
   AboutContainer,
   TaskField,
   TaskFieldContent,
   TaskCardTitle,
   TaskBar,
+  HeaderOption,
+  HeaderOptionSpan,
+  HeaderOptionContainer,
+  HeaderOptionSpanCOntainer,
 } from "./styledComponents/style";
 
 export const About = () => {
+  const [headerOption, setHeaderOption] = useState({
+    html: false,
+    css: false,
+    js: false,
+    bs: false,
+    react: false,
+    git: false,
+  });
   const [spinner, setSpinner] = useContext(LoadContext);
   const [taskbar] = useState({
     html: ["70%", "#eb7134"],
@@ -27,6 +42,7 @@ export const About = () => {
       setSpinner(false);
     }, 2000);
   }, []);
+
   return (
     <div>
       {spinner ? (
@@ -49,11 +65,53 @@ export const About = () => {
               Folyamatban...
             </h1>
             <TaskField className="taskField">
-              <HTML className="HTML">
+              <Card>
                 <TaskFieldContent className="content">
-                  <TaskCardTitle style={{ background: "rgba(247, 87, 7, .5)" }}>
-                    HTML
-                  </TaskCardTitle>
+                  <div
+                    className="taskHeader"
+                    style={{
+                      display: "flex",
+                      justifyContent: "space-between",
+                    }}>
+                    <TaskCardTitle
+                      style={{ background: "rgba(247, 87, 7, .5)" }}>
+                      HTML
+                    </TaskCardTitle>
+                    <HeaderOption className="option">
+                      {headerOption.html && (
+                        <HeaderOptionContainer>
+                          <div style={{ fontSize: "10px" }}>
+                            <span>
+                              <BsFillBookmarkStarFill
+                                style={{ marginRight: "4px" }}
+                              />
+                            </span>
+                            Marked
+                          </div>
+                          <div style={{ fontSize: "10px" }}>
+                            <span>
+                              <FaCommentDots style={{ marginRight: "4px" }} />
+                            </span>
+                            Comments
+                          </div>
+                          <div style={{ fontSize: "10px" }}>
+                            <span>
+                              <MdLiveHelp style={{ marginRight: "4px" }} />
+                            </span>
+                            Help
+                          </div>
+                        </HeaderOptionContainer>
+                      )}
+                      <HeaderOptionSpanCOntainer
+                        onClick={() =>
+                          setHeaderOption((prev) => ({ html: !prev.html }))
+                        }>
+                        <HeaderOptionSpan></HeaderOptionSpan>
+                        <HeaderOptionSpan></HeaderOptionSpan>
+                        <HeaderOptionSpan></HeaderOptionSpan>
+                      </HeaderOptionSpanCOntainer>
+                    </HeaderOption>
+                  </div>
                   <p style={{ textAlign: "justify" }} className="description">
                     Lorem Ipsum is simply dummy text of the printing and
                     typesetting industry.
@@ -62,12 +120,54 @@ export const About = () => {
                     taskbarprozent={taskbar.html[0]}
                     className="taskbar"></TaskBar>
                 </TaskFieldContent>
-              </HTML>
-              <HTML className="HTML">
+              </Card>
+              <Card>
                 <TaskFieldContent className="content">
-                  <TaskCardTitle style={{ background: "rgba(7, 55, 247, .5)" }}>
-                    CSS
-                  </TaskCardTitle>
+                  <div
+                    className="taskHeader"
+                    style={{
+                      display: "flex",
+                      justifyContent: "space-between",
+                    }}>
+                    <TaskCardTitle
+                      style={{ background: "rgba(7, 55, 247, .5)" }}>
+                      CSS
+                    </TaskCardTitle>
+                    <HeaderOption className="option">
+                      {headerOption.css && (
+                        <HeaderOptionContainer>
+                          <div style={{ fontSize: "10px" }}>
+                            <span>
+                              <BsFillBookmarkStarFill
+                                style={{ marginRight: "4px" }}
+                              />
+                            </span>
+                            Marked
+                          </div>
+                          <div style={{ fontSize: "10px" }}>
+                            <span>
+                              <FaCommentDots style={{ marginRight: "4px" }} />
+                            </span>
+                            Comments
+                          </div>
+                          <div style={{ fontSize: "10px" }}>
+                            <span>
+                              <MdLiveHelp style={{ marginRight: "4px" }} />
+                            </span>
+                            Help
+                          </div>
+                        </HeaderOptionContainer>
+                      )}
+                      <HeaderOptionSpanCOntainer
+                        onClick={() =>
+                          setHeaderOption((prev) => ({ css: !prev.css }))
+                        }>
+                        <HeaderOptionSpan></HeaderOptionSpan>
+                        <HeaderOptionSpan></HeaderOptionSpan>
+                        <HeaderOptionSpan></HeaderOptionSpan>
+                      </HeaderOptionSpanCOntainer>
+                    </HeaderOption>
+                  </div>
                   <p style={{ textAlign: "justify" }} className="description">
                     Lorem Ipsum is simply dummy text of the printing and
                     typesetting industry.
@@ -76,13 +176,54 @@ export const About = () => {
                     taskbarprozent={taskbar.css[0]}
                     className="taskbar"></TaskBar>
                 </TaskFieldContent>
-              </HTML>
-              <HTML className="HTML">
+              </Card>
+              <Card>
                 <TaskFieldContent className="content">
-                  <TaskCardTitle
-                    style={{ background: "rgba(247, 239, 7, .5)" }}>
-                    Javascript
-                  </TaskCardTitle>
+                  <div
+                    className="taskHeader"
+                    style={{
+                      display: "flex",
+                      justifyContent: "space-between",
+                    }}>
+                    <TaskCardTitle
+                      style={{ background: "rgba(247, 239, 7, .5)" }}>
+                      Javascript
+                    </TaskCardTitle>
+                    <HeaderOption className="option">
+                      {headerOption.js && (
+                        <HeaderOptionContainer>
+                          <div style={{ fontSize: "10px" }}>
+                            <span>
+                              <BsFillBookmarkStarFill
+                                style={{ marginRight: "4px" }}
+                              />
+                            </span>
+                            Marked
+                          </div>
+                          <div style={{ fontSize: "10px" }}>
+                            <span>
+                              <FaCommentDots style={{ marginRight: "4px" }} />
+                            </span>
+                            Comments
+                          </div>
+                          <div style={{ fontSize: "10px" }}>
+                            <span>
+                              <MdLiveHelp style={{ marginRight: "4px" }} />
+                            </span>
+                            Help
+                          </div>
+                        </HeaderOptionContainer>
+                      )}
+                      <HeaderOptionSpanCOntainer
+                        onClick={() =>
+                          setHeaderOption((prev) => ({ js: !prev.js }))
+                        }>
+                        <HeaderOptionSpan></HeaderOptionSpan>
+                        <HeaderOptionSpan></HeaderOptionSpan>
+                        <HeaderOptionSpan></HeaderOptionSpan>
+                      </HeaderOptionSpanCOntainer>
+                    </HeaderOption>
+                  </div>
                   <p style={{ textAlign: "justify" }} className="description">
                     Lorem Ipsum is simply dummy text of the printing and
                     typesetting industry.
@@ -91,12 +232,54 @@ export const About = () => {
                     taskbarprozent={taskbar.js[0]}
                     className="taskbar"></TaskBar>
                 </TaskFieldContent>
-              </HTML>
-              <HTML className="HTML">
+              </Card>
+              <Card>
                 <TaskFieldContent className="content">
-                  <TaskCardTitle style={{ background: "rgba(84, 5, 181, .5)" }}>
-                    Bootstrap
-                  </TaskCardTitle>
+                  <div
+                    className="taskHeader"
+                    style={{
+                      display: "flex",
+                      justifyContent: "space-between",
+                    }}>
+                    <TaskCardTitle
+                      style={{ background: "rgba(84, 5, 181, .5)" }}>
+                      Bootstrap
+                    </TaskCardTitle>
+                    <HeaderOption className="option">
+                      {headerOption.bs && (
+                        <HeaderOptionContainer>
+                          <div style={{ fontSize: "10px" }}>
+                            <span>
+                              <BsFillBookmarkStarFill
+                                style={{ marginRight: "4px" }}
+                              />
+                            </span>
+                            Marked
+                          </div>
+                          <div style={{ fontSize: "10px" }}>
+                            <span>
+                              <FaCommentDots style={{ marginRight: "4px" }} />
+                            </span>
+                            Comments
+                          </div>
+                          <div style={{ fontSize: "10px" }}>
+                            <span>
+                              <MdLiveHelp style={{ marginRight: "4px" }} />
+                            </span>
+                            Help
+                          </div>
+                        </HeaderOptionContainer>
+                      )}
+                      <HeaderOptionSpanCOntainer
+                        onClick={() =>
+                          setHeaderOption((prev) => ({ bs: !prev.bs }))
+                        }>
+                        <HeaderOptionSpan></HeaderOptionSpan>
+                        <HeaderOptionSpan></HeaderOptionSpan>
+                        <HeaderOptionSpan></HeaderOptionSpan>
+                      </HeaderOptionSpanCOntainer>
+                    </HeaderOption>
+                  </div>
                   <p style={{ textAlign: "justify" }} className="description">
                     Lorem Ipsum is simply dummy text of the printing and
                     typesetting industry.
@@ -105,12 +288,54 @@ export const About = () => {
                     taskbarprozent={taskbar.Bootstrap[0]}
                     className="taskbar"></TaskBar>
                 </TaskFieldContent>
-              </HTML>
-              <HTML className="HTML">
+              </Card>
+              <Card>
                 <TaskFieldContent className="content">
-                  <TaskCardTitle style={{ background: "rgba(5, 61, 181, .5)" }}>
-                    React
-                  </TaskCardTitle>
+                  <div
+                    className="taskHeader"
+                    style={{
+                      display: "flex",
+                      justifyContent: "space-between",
+                    }}>
+                    <TaskCardTitle
+                      style={{ background: "rgba(5, 61, 181, .5)" }}>
+                      React
+                    </TaskCardTitle>
+                    <HeaderOption className="option">
+                      {headerOption.react && (
+                        <HeaderOptionContainer>
+                          <div style={{ fontSize: "10px" }}>
+                            <span>
+                              <BsFillBookmarkStarFill
+                                style={{ marginRight: "4px" }}
+                              />
+                            </span>
+                            Marked
+                          </div>
+                          <div style={{ fontSize: "10px" }}>
+                            <span>
+                              <FaCommentDots style={{ marginRight: "4px" }} />
+                            </span>
+                            Comments
+                          </div>
+                          <div style={{ fontSize: "10px" }}>
+                            <span>
+                              <MdLiveHelp style={{ marginRight: "4px" }} />
+                            </span>
+                            Help
+                          </div>
+                        </HeaderOptionContainer>
+                      )}
+                      <HeaderOptionSpanCOntainer
+                        onClick={() =>
+                          setHeaderOption((prev) => ({ react: !prev.react }))
+                        }>
+                        <HeaderOptionSpan></HeaderOptionSpan>
+                        <HeaderOptionSpan></HeaderOptionSpan>
+                        <HeaderOptionSpan></HeaderOptionSpan>
+                      </HeaderOptionSpanCOntainer>
+                    </HeaderOption>
+                  </div>
                   <p style={{ textAlign: "justify" }} className="description">
                     Lorem Ipsum is simply dummy text of the printing and
                     typesetting industry.
@@ -119,12 +344,54 @@ export const About = () => {
                     taskbarprozent={taskbar.react[0]}
                     className="taskbar"></TaskBar>
                 </TaskFieldContent>
-              </HTML>
-              <HTML className="HTML">
+              </Card>
+              <Card>
                 <TaskFieldContent className="content">
-                  <TaskCardTitle style={{ background: "rgba(181, 90, 5, .7)" }}>
-                    GIT
-                  </TaskCardTitle>
+                  <div
+                    className="taskHeader"
+                    style={{
+                      display: "flex",
+                      justifyContent: "space-between",
+                    }}>
+                    <TaskCardTitle
+                      style={{ background: "rgba(181, 90, 5, .7)" }}>
+                      GIT
+                    </TaskCardTitle>
+                    <HeaderOption className="option">
+                      {headerOption.git && (
+                        <HeaderOptionContainer>
+                          <div style={{ fontSize: "10px" }}>
+                            <span>
+                              <BsFillBookmarkStarFill
+                                style={{ marginRight: "4px" }}
+                              />
+                            </span>
+                            Marked
+                          </div>
+                          <div style={{ fontSize: "10px" }}>
+                            <span>
+                              <FaCommentDots style={{ marginRight: "4px" }} />
+                            </span>
+                            Comments
+                          </div>
+                          <div style={{ fontSize: "10px" }}>
+                            <span>
+                              <MdLiveHelp style={{ marginRight: "4px" }} />
+                            </span>
+                            Help
+                          </div>
+                        </HeaderOptionContainer>
+                      )}
+                      <HeaderOptionSpanCOntainer
+                        onClick={() =>
+                          setHeaderOption((prev) => ({ git: !prev.git }))
+                        }>
+                        <HeaderOptionSpan></HeaderOptionSpan>
+                        <HeaderOptionSpan></HeaderOptionSpan>
+                        <HeaderOptionSpan></HeaderOptionSpan>
+                      </HeaderOptionSpanCOntainer>
+                    </HeaderOption>
+                  </div>
                   <p style={{ textAlign: "justify" }} className="description">
                     Lorem Ipsum is simply dummy text of the printing and
                     typesetting industry.
@@ -133,7 +400,7 @@ export const About = () => {
                     taskbarprozent={taskbar.git[0]}
                     className="taskbar"></TaskBar>
                 </TaskFieldContent>
-              </HTML>
+              </Card>
             </TaskField>
           </AboutContainer>
         </div>
