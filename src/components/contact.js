@@ -1,6 +1,8 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { LoadContext } from "./useContext";
 import { Spinner } from "./spinner";
+import { Form } from "./form";
+import { Ul, ContactContainer } from "./styledComponents/style";
 
 export const Contact = () => {
   const [spinner, setSpinner] = useContext(LoadContext);
@@ -10,5 +12,45 @@ export const Contact = () => {
       setSpinner(false);
     }, 2000);
   }, []);
-  return <div>{spinner ? <Spinner /> : <div>Contact</div>}</div>;
+  return (
+    <div style={{ height: "100vh" }}>
+      {spinner ? (
+        <Spinner />
+      ) : (
+        <div>
+          <ContactContainer>
+            <Ul style={{ alignItems: "center" }}>
+              <h1
+                style={{
+                  width: "100%",
+                  letterSpacing: "8px",
+                  background: "rgba(255,255,255,.6)",
+                  marginBottom: "20px",
+                }}>
+                <span>&#60;</span>GET
+                <div
+                  style={{
+                    color: "white",
+                    display: "inline-block",
+                    background: "black",
+                    paddingLeft: "8px",
+                  }}>
+                  IN
+                </div>
+                TOUCH<span>&#62;</span>
+              </h1>
+              <li>+36-30/123-4567</li>
+              <li>Szeged, Magyarorszag</li>
+              <li>Kivancsi Fancsi utca 135.</li>
+              <p>Köszönöm hogy megtekintette az oldalt, várom jelentkezésed!</p>
+            </Ul>
+
+            <div style={{ position: "relative", marginTop: "-150px" }}>
+              <Form />
+            </div>
+          </ContactContainer>
+        </div>
+      )}
+    </div>
+  );
 };

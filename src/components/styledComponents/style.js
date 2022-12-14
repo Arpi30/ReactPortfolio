@@ -169,12 +169,13 @@ export const Bar = styled.div`
 export const NavItems = styled.div`
   @media (max-width: 700px) {
     position: absolute;
-    z-index: 1;
+    z-index: 2;
     display: flex;
     flex-direction: column;
     left: 0;
     width: 100%;
-    min-height: 100vh;
+    min-height: 100%;
+    height: 100vh;
     background: white;
     top: 45px;
     margin: 0;
@@ -203,6 +204,10 @@ export const Ul = styled.ul`
   display: flex;
   flex-direction: column;
   align-items: start;
+
+  @media (max-width: 700px) {
+    max-width: ${(props) => (props.contact ? "350px" : "")};
+  }
 `;
 export const UlIcon = styled.ul`
   list-style: none;
@@ -285,13 +290,13 @@ export const StyledForm = styled.form`
   width: 500px;
   height: 400px;
   left: 50%;
-  top: 0;
+  top: ${(props) => (props.contactForm ? "10%" : "0")};
   transform: translate(-50%, 50%);
   background: #31475f;
   padding: 15px;
 
   @media (max-width: 700px) {
-    width: 300px;
+    width: 95vw;
     height: 420px;
     top: -15%;
   }
@@ -482,4 +487,12 @@ export const HeaderOptionSpanCOntainer = styled.div`
   height: 100%;
   width: 5px;
   cursor: pointer;
+`;
+export const ContactContainer = styled.div`
+  max-width: 500px;
+  margin: 30px auto 0;
+
+  @media (max-width: 700px) {
+    width: 95vw;
+  }
 `;
