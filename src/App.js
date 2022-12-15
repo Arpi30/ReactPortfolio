@@ -27,7 +27,7 @@ function App() {
         </BrowserRouter>
       </div>
       <Footer />
-      asdasd
+      asd
     </div>
   );
 }
