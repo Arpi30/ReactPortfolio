@@ -27,6 +27,7 @@ function App() {
         </BrowserRouter>
       </div>
       <Footer />
+      asdasd
     </div>
   );
 }
