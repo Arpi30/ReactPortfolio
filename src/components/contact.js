@@ -24,7 +24,6 @@ export const Contact = () => {
                 style={{
                   width: "100%",
                   letterSpacing: "8px",
-                  background: "rgba(255,255,255,.6)",
                   marginBottom: "20px",
                 }}>
                 <span>&#60;</span>GET
