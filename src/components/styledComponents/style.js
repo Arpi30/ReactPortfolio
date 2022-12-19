@@ -8,8 +8,9 @@ export const NavBar = styled.nav`
   justify-content: space-between;
   align-items: center;
   box-shadow: 0 0 15px white;
-
-  z-index: 1;
+  position: sticky;
+  top: 0;
+  z-index: 2;
   width: 100%;
 `;
 export const HomeContainer = styled.div`
@@ -359,7 +360,6 @@ export const SpinnerIcon = styled.span`
 export const AboutContainer = styled.div`
   max-width: 60%;
   margin: 0 auto;
-  margin-top: 30px;
   margin-bottom: 30px;
 
   @media (max-width: 1400px) {
@@ -386,8 +386,14 @@ export const TaskFieldContent = styled.div`
 export const IntroText = styled.div`
   text-align: justify;
   padding: 10px;
-  font-style: italic;
+  font-family: poppins;
   margin-bottom: 50px;
+  @media (max-width: 1400px) {
+    &:first-child {
+      color: white;
+    }
+    background: rgba(49, 71, 95, 0.9);
+  }
 `;
 export const Card = styled.div`
   min-width: 350px;

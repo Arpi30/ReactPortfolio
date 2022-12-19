@@ -41,7 +41,9 @@ export const Contact = () => {
               <li>+36-30/123-4567</li>
               <li>Szeged, Magyarorszag</li>
               <li>Kivancsi Fancsi utca 135.</li>
-              <p>Köszönöm hogy megtekintette az oldalt, várom jelentkezésed!</p>
+              <p>
+                Köszönöm hogy megtekintetted az oldalt, várom jelentkezésed!
+              </p>
             </Ul>
 
             <div style={{ position: "relative", marginTop: "-150px" }}>

@@ -57,8 +57,8 @@ export const About = () => {
                 ahol 3 és fél évet dolgoztam szintén az ipari gépek
                 programozását és adatbázisát kellet elsajátítanom. Autódidakta
                 módon fejlesztem magam a programozás világában és az eddig
-                megszerzett tudásommal úgy érzem hogy a cég nö vekedését
-                támogathatom."
+                megszerzett tudásommal úgy érzem hogy a leendő munkahelyem
+                növekedését támogathatom."
               </span>
             </IntroText>
             <h1 style={{ textAlign: "start", padding: "5px" }}>
