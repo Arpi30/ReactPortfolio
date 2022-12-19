@@ -54,7 +54,7 @@ export const Home = () => {
               <HomeButton href="https://aaresume.hu">View CV</HomeButton>
             </ButtonContainer>
           </HomeContainer>
-          <div>
+          <div style={{ minHeight: "420px", margin: "3rem 0" }}>
             {transition((style, item) =>
               item ? (
                 <animated.div style={style}>

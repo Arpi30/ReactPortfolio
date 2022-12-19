@@ -13,7 +13,7 @@ function App() {
   const [pending, setPending] = useState(false);
   return (
     <div className="App">
-      <div style={{ flex: "1", position: "relative" }}>
+      <div>
         <BrowserRouter>
           <Nav />
           <LoadContext.Provider value={[pending, setPending]}>

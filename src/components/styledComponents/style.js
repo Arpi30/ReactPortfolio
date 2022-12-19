@@ -194,9 +194,8 @@ export const MainFooter = styled.div`
   color: white;
   background: #31475f;
   padding-top: 3rem;
-  position: relative;
-  bottom: 0;
   box-shadow: 0 0 15px white;
+  margin-bottom: -3rem;
 `;
 export const Ul = styled.ul`
   list-style: none;
