@@ -1,4 +1,3 @@
-import { FaEdge } from "react-icons/fa";
 import styled, { keyframes } from "styled-components";
 
 export const NavBar = styled.nav`
@@ -299,6 +298,14 @@ export const StyledForm = styled.form`
     width: 95vw;
     height: 420px;
     top: -15%;
+  }
+`;
+export const FormContainer = styled.div`
+  min-height: 480px;
+  margin-top: 10rem;
+
+  @media (max-width: 700px) {
+    margin-top: 5rem;
   }
 `;
 export const InputFields = styled.div`

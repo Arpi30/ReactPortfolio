@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 // Window Resize Hook
 export function useWindowResize() {
   const [size, setSize] = useState({

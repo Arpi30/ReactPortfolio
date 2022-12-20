@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 import {
   StyledForm,
@@ -18,9 +18,25 @@ export const Form = (props) => {
   function changeValue(e, setVal) {
     setVal(e.target.value);
   }
+  function messageSend(e) {
+    e.preventDefault();
+    const config = {
+      SecureToken: "7d141477-94cd-4a44-b8a4-4af6463680dc",
+      To: "alijie24@gmail.com",
+      From: emailValue,
+      Subject: "AAPortfolio Message",
+      Body: message,
+    };
+    if (window.Email) {
+      window.Email.send(config).then((message) => alert(message));
+      setName("");
+      setEmailValue("");
+      setMessage("");
+    }
+  }
 
   return (
-    <StyledForm>
+    <StyledForm onSubmit={(e) => messageSend(e)}>
       <div className="container">
         <div className="closeForm">
           <AiFillCloseSquare onClick={props.close} size={20} />
@@ -44,6 +60,7 @@ export const Form = (props) => {
             onChange={(e) => changeValue(e, setName)}
             reg={userName.test(name)}
             type="text"
+            value={name}
             placeholder="Name"></Inputs>
           <Inputs
             type="email"
@@ -56,6 +73,7 @@ export const Form = (props) => {
             onChange={(e) => changeValue(e, setMessage)}
             reg={textMessage.test(message)}
             type="text"
+            value={message}
             placeholder="Message"></Inputs>
         </InputFields>
         <FormSubmit>Submit</FormSubmit>

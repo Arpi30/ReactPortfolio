@@ -6,6 +6,7 @@ import {
   HomeButton,
   HomeContainer,
   LandingPageLastName,
+  FormContainer,
 } from "./styledComponents/style";
 import { Form } from "./form";
 import { useTransition, animated } from "react-spring";
@@ -54,7 +55,7 @@ export const Home = () => {
               <HomeButton href="https://aaresume.hu">View CV</HomeButton>
             </ButtonContainer>
           </HomeContainer>
-          <div style={{ minHeight: "420px", marginTop: "10rem" }}>
+          <FormContainer>
             {transition((style, item) =>
               item ? (
                 <animated.div style={style}>
@@ -64,7 +65,7 @@ export const Home = () => {
                 ""
               )
             )}
-          </div>
+          </FormContainer>
         </MainContent>
       )}
     </div>

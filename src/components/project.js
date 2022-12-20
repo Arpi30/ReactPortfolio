@@ -102,7 +102,9 @@ export const Project = () => {
           <h1>PROJECT</h1>
           <div className="projectPost">
             <div className="projectImg">
-              <img src="https://9to5google.com/wp-content/uploads/sites/4/2021/10/samsung_android_12_beta_weather_app.jpg?quality=82&strip=all"></img>
+              <img
+                alt="p1"
+                src="https://9to5google.com/wp-content/uploads/sites/4/2021/10/samsung_android_12_beta_weather_app.jpg?quality=82&strip=all"></img>
             </div>
             <div className="projectInfo">
               <div className="projectInfoContainer">
@@ -168,7 +170,9 @@ export const Project = () => {
           </div>
           <div className="projectPost">
             <div className="projectImg">
-              <img src="https://user-images.githubusercontent.com/61280281/99399723-0b3fa980-290c-11eb-8728-03d974be548d.png"></img>
+              <img
+                alt="p2"
+                src="https://user-images.githubusercontent.com/61280281/99399723-0b3fa980-290c-11eb-8728-03d974be548d.png"></img>
             </div>
             <div className="projectInfo">
               <div className="projectInfoContainer">
@@ -233,7 +237,9 @@ export const Project = () => {
           </div>
           <div className="projectPost">
             <div className="projectImg">
-              <img src="https://i.cdn29.hu/apix_collect_c/1207/netflix/netflix_screenshot_20180707133224_2_original_760x425_cover.jpg"></img>
+              <img
+                alt="p3"
+                src="https://i.cdn29.hu/apix_collect_c/1207/netflix/netflix_screenshot_20180707133224_2_original_760x425_cover.jpg"></img>
             </div>
             <div className="projectInfo">
               <div className="projectInfoContainer">
